@@ -34,11 +34,30 @@ public class SortArray {
 
     public static void  main(String[] args){
 
-        int[] arr = new int[]{5,2,1,7,4,10,0};
-        sortHelper(arr, arr.length-1);
-        for (int i= 0; i< arr.length; i++){
-            System.out.println(arr[i]);
+//        int[] arr = new int[]{5,2,1,7,4,10,0};
+//        sortHelper(arr, arr.length-1);
+//        for (int i= 0; i< arr.length; i++){
+//            System.out.println(arr[i]);
+//        }
+
+        reverseWord("Geeks");
+
+    }
+
+
+    public static String reverseWord(String str)
+    {
+        // Reverse the string str
+
+        for(int i = str.length()-1, j = 0;i>j;i--,j++){
+
+            str = str.charAt(i) + str.substring(j+1,i) + str.charAt(j);
+            System.out.println(str);
+
         }
+
+        return str;
+
 
     }
 

@@ -8,7 +8,7 @@ public class SortStack {
 
     public static void insertHaelper(Stack<Integer> s, int i){
 
-        if (s.isEmpty() || s.peek() > i){
+        if (s.isEmpty() || s.peek() < i){
             s.push(i);
             return;
         }
