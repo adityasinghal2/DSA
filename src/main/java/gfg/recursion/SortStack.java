@@ -18,6 +18,20 @@ public class SortStack {
 
     }
 
+    public static void deleteME(Stack<Integer> s, int n, int m){
+
+        if (n == m){
+            s.pop();
+            return;
+        }
+
+        int d = s.pop();
+        deleteME(s, n-1, m);
+        s.push(d);
+
+    }
+
+
     static void printStack(Stack<Integer> s)
     {
         ListIterator<Integer> lt = s.listIterator();
@@ -51,8 +65,9 @@ public class SortStack {
         s.add(9);
         s.add(2);
 
-        sortHelper(s);
+//        sortHelper(s);
 
+        deleteME(s, s.size(), s.size()/2);
         printStack(s);
 
 

@@ -8,10 +8,11 @@ public class KthSymbolGrammer {
                 return 0;
             }
 
-            if (K%2 == 1){
-                return kthGrammar(N-1, (K+1)/2);
+            int mid = (int) Math.pow(2,N-1)/2;
+            if (mid >= K){
+                return kthGrammar(N-1, K);
             }else{
-                return invert(kthGrammar(N-1, K/2));
+                return invert(kthGrammar(N-1, K-mid));
             }
 
         }
@@ -24,7 +25,7 @@ public class KthSymbolGrammer {
         }
 
     public static void  main(String[] args){
-        System.out.println(kthGrammar(5, 9));
+        System.out.println(kthGrammar(3, 2));
 
     }
 
