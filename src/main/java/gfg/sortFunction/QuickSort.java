@@ -17,7 +17,7 @@ class QuickSort {
 
     static int partition(int arr[], int low, int high) {
         // your code here
-        int pivot = arr[high];
+        int pivot = arr[low];
 
         int i = low;
         int j = high;

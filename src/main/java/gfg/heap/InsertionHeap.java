@@ -49,12 +49,12 @@ public class InsertionHeap {
         int left = 2 * index +1;
         int right = 2 * index +2;
 
-        if (left < n && arr.get(left) < arr.get(largest)){
+        if (left <= n && arr.get(left) < arr.get(largest)){
 
             largest = left;
         }
 
-        if (right < n && arr.get(right) < arr.get(largest)){
+        if (right <= n && arr.get(right) < arr.get(largest)){
             largest = right;
         }
 
@@ -77,10 +77,10 @@ public class InsertionHeap {
             maxHeapify(arr, n, i);
         }
 
-        for (int i = n;i>=0;i--){
+        for (int i = n-1;i>=0;i--){
             int t = arr.get(0);
-            arr.set(0,arr.get(i));
-            arr.set(i, t);
+            arr.set(0,arr.get(i+1));
+            arr.set(i+1, t);
             maxHeapify(arr, i, 0);
         }
 
